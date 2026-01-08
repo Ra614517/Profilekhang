@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KHANG VIP - Official Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root { 
+      --primary: #f72585; 
+      --secondary: #4cc9f0; 
+      --success: #2ecc71; /* Premium Green */
+      --bg-dark: #0a0a12;
+      --glass: rgba(255, 255, 255, 0.03);
+      --glass-border: rgba(255, 255, 255, 0.1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+    body {
+      background-color: var(--bg-dark);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .glow-bg {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+    }
+    .glow-bg::before {
+      content: ""; position: absolute; top: -10%; left: -10%; width: 300px; height: 300px;
+      background: var(--primary); filter: blur(120px); opacity: 0.15;
+    }
+
+    .container { width: 100%; max-width: 420px; animation: fadeIn 0.8s ease-out; }
+
+    .profile-card {
+      background: var(--glass);
+      backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
+      border: 1px solid var(--glass-border);
+      border-radius: 35px;
+      padding: 45px 25px;
+      text-align: center;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+    }
+
+    .profile-img-wrapper {
+      position: relative;
+      width: 130px; height: 130px;
+      margin: 0 auto 20px;
+    }
+
+    .profile-img {
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      border: 3px solid var(--primary);
+      padding: 4px;
+      object-fit: cover;
+    }
+
+    /* Premium Green Glow Tick */
+    .verified-badge {
+      position: absolute; bottom: 8px; right: 8px;
+      background: var(--success); 
+      color: #000;
+      width: 28px; height: 28px;
+      border-radius: 50%; 
+      border: 3px solid #161625;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; 
+      box-shadow: 0 0 15px rgba(46, 204, 113, 0.8); /* Green Glow Effect */
+      animation: pulseGreen 2s infinite;
+    }
+
+    @keyframes pulseGreen {
+      0% { box-shadow: 0 0 5px rgba(46, 204, 113, 0.6); }
+      50% { box-shadow: 0 0 20px rgba(46, 204, 113, 0.9); }
+      100% { box-shadow: 0 0 5px rgba(46, 204, 113, 0.6); }
+    }
+
+    h1 { font-size: 30px; font-weight: 800; letter-spacing: 1.5px; margin-bottom: 5px; text-transform: uppercase; }
+    h1 span { color: var(--primary); text-shadow: 0 0 15px rgba(247, 37, 133, 0.4); }
+    
+    .tagline { font-size: 12.5px; color: var(--secondary); margin-bottom: 20px; font-weight: 500; letter-spacing: 0.5px; opacity: 0.9; }
+
+    .view-counter {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 5px 15px; border-radius: 20px;
+      font-size: 12px; color: #aaa; margin-bottom: 30px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .view-counter b { color: white; }
+
+    .links-grid { display: flex; flex-direction: column; gap: 16px; }
+
+    .link-btn {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 22px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      text-decoration: none; color: white;
+      font-weight: 600; font-size: 14px; transition: 0.3s;
+    }
+
+    .link-btn:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--secondary);
+    }
+
+    .footer-text { margin-top: 35px; font-size: 11px; color: #555; text-transform: uppercase; letter-spacing: 2px; }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body>
+
+  <div class="glow-bg"></div>
+
+  <div class="container">
+    <div class="profile-card">
+      
+      <div class="profile-img-wrapper">
+        <img src="1000091713.png" alt="KHANG VIP" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=KHANG+VIP&background=f72585&color=fff'">
+        <div class="verified-badge"><i class="fas fa-check"></i></div>
+      </div>
+
+      <h1><span>KHANG</span> VIP</h1>
+      <p class="tagline">PREMIUM PANEL DEVELOPER & SYSTEM ADMIN</p>
+
+      <div class="view-counter">
+        <i class="fas fa-eye" style="color:var(--secondary)"></i>
+        <span>Profile Views: <b id="countText">258</b></span>
+      </div>
+
+      <div class="links-grid">
+        <a href="https://t.me/+9PopZ5hrEgE1YzQ1" target="_blank" class="link-btn">
+          <span><i class="fab fa-telegram-plane" style="color:#0088cc"></i> TELEGRAM GROUP</span>
+          <i class="fas fa-external-link-alt" style="font-size:12px; opacity:0.4"></i>
+        </a>
+        <a href="https://t.me/Khangvip05" target="_blank" class="link-btn">
+          <span><i class="fas fa-headset" style="color:#4cc9f0"></i> CONTACT OWNER</span>
+          <i class="fas fa-external-link-alt" style="font-size:12px; opacity:0.4"></i>
+        </a>
+        <a href="https://www.tiktok.com/@khang_vip0?_r=1&_t=ZS-92u9ZkGwguj" target="_blank" class="link-btn">
+          <span><i class="fab fa-tiktok"></i> TIKTOK PROFILE</span>
+          <i class="fas fa-external-link-alt" style="font-size:12px; opacity:0.4"></i>
+        </a>
+        <a href="https://youtube.com/@khang_vip00?si=XnJfgyLDFjU5U2wt" target="_blank" class="link-btn">
+          <span><i class="fab fa-youtube" style="color:#ff0000"></i> YOUTUBE CHANNEL</span>
+          <i class="fas fa-external-link-alt" style="font-size:12px; opacity:0.4"></i>
+        </a>
+      </div>
+
+      <p class="footer-text">DESIGNED BY KHANG VIP &copy; 2026</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      let count = localStorage.getItem("profile_views");
+      if (!count) { count = 258; } else { count = parseInt(count) + 1; }
+      localStorage.setItem("profile_views", count);
+      document.getElementById("countText").innerText = count;
+    });
+  </script>
+
+</body>
+</html>
